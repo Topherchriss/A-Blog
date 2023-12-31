@@ -1,0 +1,22 @@
+<!-- blog/templates/blog/post_detail.html -->
+<!-- blog/templates/blog/post_details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <!-- Add your CSS styles or link to external stylesheets here -->
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p class="date">Published on {{ post.published_date|date:"F j, Y" }} by {{ post.author }}</p>
+    <p>{{ post.text }}</p>
+
+    <!-- Add your additional details or styling here -->
+
+    <!-- Add your JavaScript scripts or link to external scripts here -->
+</body>
+</html>
