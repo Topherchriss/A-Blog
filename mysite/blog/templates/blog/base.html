@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <html
@@ -37,7 +39,13 @@ href="{% static 'blog/styles.css' %}">
 </head>
 <body>
   <header>
-    </header>
+      <div class="container">
+          <a href="{% url 'post_new' %}" class="top-menu">
+             {% include './icons/file-earmark-plus.svg' %}
+         </a>
+
+      </div>
+  </header>
   <main>
     <div class="container">
       {% block content %}{% endblock %}
