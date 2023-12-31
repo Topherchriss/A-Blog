@@ -1,42 +1,15 @@
-<!-- blog/templates/blog/post_list.html -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post List</title>
-    <!-- will add CSS styles and links to external stylesheets here -->
-</head>
-<body>
-    <h1>Post List</h1>
-    {% for post in posts %}
-        <div class="post">
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p class="date">Published on {{ post.published_date|date:"F j, Y" }} by {{ post.author }}</p>
-            <p>{{ post.text }}</p>
-        </div>
-    {% endfor %}
-
-    <div class="pagination">
-        <span class="step-links">
-            {% if posts.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ posts.previous_page_number }}">previous</a>
-            {% endif %}
-
-            <span class="current">
-                Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
-            </span>
-
-            {% if posts.has_next %}
-                <a href="?page={{ posts.next_page_number }}">next</a>
-                <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
-        </span>
+{% for post in posts %}
+  <div class="card mb-3">
+    {% if post.featured_image %}
+      <img src="{{ post.featured_image.url }}" class="card-img-top img-fluid" alt="{{ post.title }}">
+    {% endif %}
+    <div class="card-body">
+      <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+      <p class="card-text">{{ post.excerpt }}</p>
+      <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Read More</a>
     </div>
-
-    <!-- wil add JavaScript scripts or link to external scripts here -->
-</body>
-</html>
+    <div class="card-footer text-muted">
+      Written by {{ post.author }} on {{ post.published_date|date:"F j, Y" }}
+    </div>
+  </div>
+{% endfor %}
