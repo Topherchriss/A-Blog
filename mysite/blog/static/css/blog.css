@@ -1,0 +1,43 @@
+/* Card Styling */
+.card {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-weight: 500; /* Slightly bolder title */
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: #666; /* Lighter text for excerpt */
+  line-height: 1.6;
+}
+
+.card-footer {
+  background-color: #f5f5f5; /* Lighter background for footer */
+  padding: 0.5rem 1rem;
+}
+
+/* Featured Image Styling */
+.card-img-top {
+  height: 200px; /* Adjust as needed */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Read More Button Styling */
+.btn-primary {
+  background-color: #3498db; /* Accent color */
+  border-color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9; /* Darker hover color */
+}
+
+/* Additional Adjustments */
+.post-list {
+  margin-top: 2rem; /* Spacing above the card list */
+}

@@ -6,6 +6,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    #posts = Post.objects.filter(published_date__lte=timezone.now())
+
     paginator = Paginator(posts, 10)  # Show 10 posts per page
 
     page = request.GET.get('page')
