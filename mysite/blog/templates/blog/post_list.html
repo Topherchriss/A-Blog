@@ -1,6 +1,6 @@
 {% for post in posts %}
   <div class="card mb-3">
-    {% if post.featured_image %}
+    {% if post.featured_image and post.featured_image.url %}
       <img src="{{ post.featured_image.url }}" class="card-img-top img-fluid" alt="{{ post.title }}">
     {% endif %}
     <div class="card-body">
