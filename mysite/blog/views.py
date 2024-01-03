@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-from django.core.validators import EmailValidator
+#from django.core.validators import EmailValidator
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.contrib.auth.views import  LoginView
@@ -128,59 +128,6 @@ def blog_home(request):
     return redirect('post_list')
 
 
-"""
-def signup(request):
-    if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST, request.FILES)
-
-        try:
-            if form.is_valid():
-                # Validate email format
-                email = form.cleaned_data.get('email')
-                email_validator = EmailValidator()
-                email_validator(email)
-
-                # Validate password matching
-                password1 = form.cleaned_data.get('password1')
-                password2 = form.cleaned_data.get('password2')
-                if password1 != password2:
-                    raise ValidationError('Passwords must match.')
-
-                # If validation passes, create the user and log them in
-                user = form.save()
-                login(request, user)
-                return redirect('blog_home')
-
-        except ValidationError as e:
-            # Handle validation errors and display relevant messages
-            error_message = str(e)
-            form.add_error(None, error_message)  # Non-field error
-
-    else:
-        form = CustomUserCreationForm()
-
-    return render(request, 'registration/signup.html', {'form': form})
-
-
-def user_login(request):
-    if request.method == 'POST':
-        form = CustomAuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            # Use the custom_name as the username for authentication
-            username = form.cleaned_data.get('custom_name')
-            password = form.cleaned_data.get('password')
-            user = authenticate(request, custom_name=username, password=password)
-
-            if user is not None:
-                login(request, user)
-                return redirect('blog_home')
-            else:
-                form.add_error('custom_name', 'Invalid custom name or password.')
-    else:
-        form = CustomAuthenticationForm()
-
-    return render(request, 'registration/login.html', {'form': form})
-"""
 def user_signup(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
