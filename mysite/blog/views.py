@@ -139,7 +139,7 @@ def user_signup(request):
     else:
         form = CustomUserCreationForm()
 
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'blog/signup.html', {'form': form})
 
 
 def user_login(request):
@@ -157,7 +157,7 @@ def user_login(request):
                 messages.error(request, 'Invalid username or password.')
     else:
         form = CustomAuthenticationForm(request)
-    return render(request, 'registration/login.html', {'form': form})
+    return render(request, 'blog/login.html', {'form': form})
 
 
 
