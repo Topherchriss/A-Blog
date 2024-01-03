@@ -1,0 +1,40 @@
+<!-- blog/templates/blog/add_comment.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Your Insights</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h1 class="text-center mt-5">Join the Conversation</h1>
+        <p class="lead text-muted">Add your thoughts and engage with community.</p>
+
+        <form method="POST" class="comment-form mt-4">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="id_text">Comment: </label>
+            {{ form.text }}
+          </div>
+          <input type="hidden" name="post_pk" value="{{ post.pk }}">
+          <button type="submit" class="btn btn-success btn-lg">Share Your Insights</button>
+        </form>
+
+        <div class="mt-4 text-center">
+          <a href="{% url 'post_detail' post.pk %}" class="btn btn-secondary">Back to Post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
