@@ -140,5 +140,3 @@ AUTHENTICATION_BACKENDS = [
 
 
 
-#AUTH_USER_MODEL = 'blog.CustomUser'
-
