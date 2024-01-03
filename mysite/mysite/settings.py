@@ -20,18 +20,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y6n*@=!w_lkoc2i=$he60nxmat23(q9_jac^g13-oz7@y=6xay'
+SECRET_KEY = 'django-insecure-mpkw0(%e2=f9%7*fo&h)0z+v9#cm*9w1sd3si9vke52lsdlz6#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    #'blog.apps.BlogConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog'
-
-
 ]
 
 MIDDLEWARE = [
@@ -119,34 +116,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
-
-# media settings
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-<<<<<<< HEAD
-MEDIA_URL = '/media/'
-MEDIA_ROOT = Path(BASE_DIR / 'media')
-=======
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-]
-
-
-
-<<<<<<< HEAD
-#AUTH_USER_MODEL = 'blog.CustomUser'
-
->>>>>>> c046122d41b78508d479705218a485a9d654d203
-=======
->>>>>>> 1deb639b3c2512396543c6bc9fc6c72c1d15c91e
