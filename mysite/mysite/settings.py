@@ -144,6 +144,9 @@ AUTHENTICATION_BACKENDS = [
 
 
 
+<<<<<<< HEAD
 #AUTH_USER_MODEL = 'blog.CustomUser'
 
 >>>>>>> c046122d41b78508d479705218a485a9d654d203
+=======
+>>>>>>> 1deb639b3c2512396543c6bc9fc6c72c1d15c91e
